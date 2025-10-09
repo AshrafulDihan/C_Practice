@@ -41,6 +41,7 @@ void createnode() {
         i->next = newnode;
     }
 }
+.gitignore
 
 int main() {
     printlinkedlist();

@@ -1,0 +1,34 @@
+# -------------------------
+# JetBrains CLion & C/C++ Project
+# -------------------------
+
+# Ignore CLion project settings
+.idea/
+
+# Ignore CMake build folders
+cmake-build-*/
+
+# Ignore build outputs
+*.exe
+*.o
+*.obj
+*.out
+*.a
+*.so
+*.dll
+
+# Ignore log & temp files
+*.log
+*.tmp
+*.cache
+*.DS_Store
+
+# Ignore user-specific files
+*.iml
+*.user
+*.swp
+
+# Optional: ignore CMake files if auto-generated
+CMakeCache.txt
+CMakeFiles/
+Makefile
