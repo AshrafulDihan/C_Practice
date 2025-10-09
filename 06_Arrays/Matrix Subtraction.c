@@ -12,7 +12,7 @@ int main() {
     int matrix1[size][size];
 
     printf("\nFirst metrix\n");
-    for (i = 0; i<size; i++) {
+    for (i = 0; i<=size; i++) {
         for (j= 0; j<size; j++) {
             printf("Enter the value [%d][%d]: ",i,j);
             scanf("%d",&matrix1[i][j]);

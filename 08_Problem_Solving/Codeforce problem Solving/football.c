@@ -1,31 +1,31 @@
-//
-// Created by ashra on 03/07/2025.
-//
+
+// Problem: Codeforces 96A - Football
+// Goal: Check if the input string contains 7 or more same characters in a row (e.g., "0000000" or "1111111")
 
 #include<stdio.h>
-
 int main() {
-    char str[100];
-    int i;
-    int count=1;
-    scanf(" %s", str);
+    int x,i;
+    int count =1;
+    char str[101];
+    scanf("%s",str);
 
-    for ( i =1 ; str[i]!='\0' ; i++) {   //str[i] != '\0'	Go until end of string (excluding \0)
-        if (str[i]==str[i-1]) {     //str[i-1] == the character just before the current one
-            count++;
-            if (count >= 7) {
-                printf("YES");
-                return 0;
-            }
-
+    for (i=0; str[i]!='\0'; i++) // Loop through the string starting
+        //from second character (index 1)
+      {
+        if (str[i]==str[i+1])
+            // If current character is same as previous one, continue the streak
+        {
+          count++;
+           if (count >= 7)
+             {
+                printf("YES\n");  // Found 7+ same players in a row
+                return 0; // Exit immediately
+             }
         }
         else {
             count = 1;
         }
-
-    }
-    printf("NO");
-    return 0;
-
+      }
+  printf("NO\n");
+  return 0;
 }
-

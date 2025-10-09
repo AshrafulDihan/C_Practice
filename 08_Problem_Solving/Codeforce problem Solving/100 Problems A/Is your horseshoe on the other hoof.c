@@ -2,8 +2,6 @@
 // Created by ashra on 13/07/2025.
 //
 
-
-
 #include<stdio.h>
 
 int main()

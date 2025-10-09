@@ -1,33 +1,56 @@
-#include <stdio.h>
+
+#include<stdio.h>
+#include<stdlib.h>
+#
+struct student {
+    int id;
+    struct student *next;
+
+};
+struct student *start=NULL;
+void printlinkedlist() {
+    printf("Linked List: ");
+    struct student *i= start;
+    while (i!=NULL) {
+        printf("%d ",i->id);
+        i=i-> next;
+    }
+    printf("\n");
+}
+
+void createnode() {
+    struct student *newnode;
+    int value;
+    printf("Enater the data : ");
+    scanf("%d",&value );
+    newnode=(struct student *)malloc(sizeof(struct student));
+
+    newnode->id = value;
+    newnode->next = NULL;
+
+    if (start == NULL) {
+        start = newnode;
+
+    }
+
+    else {
+        struct student *i=start;
+        while (i->next!=NULL) {
+            i=i->next;
+        }
+        i->next = newnode;
+    }
+}
 
 int main() {
-    int N, X;
-    scanf("%d %d", &N, &X);
-
-    int A[N];
-    for (int i = 0; i < N; i++) {
-        scanf("%d", &A[i]);
-    }
-
-    int totalBoosters = 0;
-
-    for (int i = 1; i < N; i++) {
-        if (A[i] < A[i - 1]) {
-            int diff = A[i - 1] - A[i];
-
-            // Use Booster-A as much as possible
-            int useA = (diff <= X) ? diff : X;
-            X -= useA;
-
-            // Remaining diff use Booster-B (2 per km/h)
-            int remaining = diff - useA;
-            totalBoosters += useA + (2 * remaining);
-
-            // Update speed after boosting
-            A[i] = A[i - 1];
-        }
-    }
-
-    printf("%d\n", totalBoosters);
+    printlinkedlist();
+    createnode();
+    printlinkedlist();
+    createnode();
+    printlinkedlist();
+    createnode();
+    printlinkedlist();
+    createnode();
+    printlinkedlist();
     return 0;
 }

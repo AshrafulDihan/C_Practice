@@ -4,17 +4,18 @@
 #include<stdio.h>
 int main() {
     int n;
-    printf("Enter a number: ");
+    printf("Enter a number: ");//Scan the array size
     scanf("%d",&n);
 
     int arr[n];
-
+//User input the array elements
+    printf("Enter the array elements: ");
     int i=0;
     while (i<n) {
         scanf("%d",&arr[i]);
         i++;
     }
-
+//Sum of all even number
     int sum=0;
     i=0;
     while (i<n) {
@@ -23,7 +24,7 @@ int main() {
         }
         i++;
     }
-
-    printf("%d")
+    printf("Smu of all even number is : %d",sum);
+    return 0;
 
 }
