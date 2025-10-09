@@ -11,7 +11,6 @@ int febonacci(int i)
       if(i ==1){
         return 1;
       }
-
     return febonacci(i-1) + febonacci(i-2);
     }
 
