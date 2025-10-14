@@ -24,3 +24,4 @@ int main() {
         i = i->next;
     }
 }
+

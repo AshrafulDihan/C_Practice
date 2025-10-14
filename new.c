@@ -1,7 +1,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#
+
 struct student {
     int id;
     struct student *next;
@@ -30,7 +30,6 @@ void createnode() {
 
     if (start == NULL) {
         start = newnode;
-
     }
 
     else {
@@ -41,7 +40,7 @@ void createnode() {
         i->next = newnode;
     }
 }
-.gitignore
+
 
 int main() {
     printlinkedlist();

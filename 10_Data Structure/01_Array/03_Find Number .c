@@ -8,7 +8,11 @@ int main() {
     int n, search_num, found=0;
     printf("Enter the array size: ");
     scanf("%d",&n);
-
+    //If the user enters array size ≤ 0
+    if (n <= 0) {
+        printf("Invalid array size!\n");
+        return 0;
+    }
     int arr[n];
     //Take array elements
     printf("Enter %d elements: ", n);
@@ -27,7 +31,7 @@ int main() {
     while (i<n) {
         if (search_num == arr[i]) {
             printf("%d Found in %d number index.\n",search_num, i);
-            found = 1;
+            found ++;
             //  break; // If we use break just showing first index.
         }
         i++;
