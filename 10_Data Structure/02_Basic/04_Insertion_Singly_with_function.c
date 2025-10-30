@@ -35,6 +35,8 @@ void insertFirst() {
     start = node;
 
     printf("\n");
+
+    printLinkedlist();
 }
 
 void insertLast() {
@@ -60,38 +62,61 @@ void insertLast() {
     }
 
     printf("\n");
+    printLinkedlist();
 }
 
 void insertAny() {
-    printf("Insert any function called.\n");
-    int value,position;
-    printf("Enter the value you insert: ");
+    int search,value;
+    // Scan student ID
+    printf("Enter the ID: ");
     scanf("%d",&value);
-
+    // Create a new node and assign ID
     stu *node;
-    node = (stu *)malloc(sizeof(stu));
-
+    node =(stu *)malloc(sizeof(stu));
     node->id = value;
     node->next = NULL;
 
-    if (start==NULL) {
-        printf("No node here.\n");
+    // If the list is empty, insert this node as the first node
+    if (start == NULL) {
         start= node;
     }
-    else{
-        printf("After which you went to insert: ");
-        scanf("%d",&position);
+    else {
+        // If the list is not empty, ask after which ID to insert
+        printf("Enter the position you went to insert: ");
+        scanf("%d",&search);
+
         stu *i = start;
-        while (i->id != position) {
+        while (i!=NULL && i->id != search) {
             i= i->next;
         }
-        node->next =i->next;
-        i->next = node;
+        // If the ID is not found, inform the user
+        if (i==NULL) {
+            printf("ID not found\n");
+        }
+
+        else {
+            // Insert the new node after the found node
+            node->next = i->next;
+            i->next = node;
+        }
+        printf("\n");
     }
+    printLinkedlist();
 }
 int main() {
+    stu *s1, *s2;
+    s1 =(stu *)malloc(sizeof(stu));
+    s2 =(stu *)malloc(sizeof(stu));
+    start = s1;
+    s1->id = 100;
+    s2->id = 200;
+    s1->next = s2;
+    s2->next = NULL;
+
+    printLinkedlist();
     insertFirst();
     insertLast();
     insertFirst();
+    insertAny();
     printLinkedlist();
 }

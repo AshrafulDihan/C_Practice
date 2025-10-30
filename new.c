@@ -127,6 +127,11 @@ void deleteany()
 }
 int main()
 {
+    struct student *s1;
+    s1=(struct student *)malloc(sizeof(struct student));
+    s1->id = 100;
+    s1->next = NULL;
+    start= s1;
     printlinkedlist();
     insertbegin();
     insertany();
